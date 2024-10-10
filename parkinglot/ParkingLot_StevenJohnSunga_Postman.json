@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "8a229d85-1bae-4b35-87ac-3ed0949b5153",
+		"name": "ParkingLot_StevenJohnSunga",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38880940"
+	},
+	"item": [
+		{
+			"name": "register a parking lot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"location\": \"Downtown\",\r\n  \"capacity\": 100,\r\n  \"occupiedSpaces\": 0\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/parking-lots/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking-lots",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register a vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"licensePlate\": \"XYZ789\",\r\n  \"type\": \"CAR\",\r\n  \"ownerName\": \"John Doe\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check in a vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "licensePlate",
+							"value": "XYZ789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles/check-in/360411e1-23d1-4e39-8f90-9afac91db843",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"check-in",
+						"360411e1-23d1-4e39-8f90-9afac91db843"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check out a vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "licensePlate",
+							"value": "XYZ782",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles/check-out/{814a5228-8e21-480e-b3e3-9470d2017e47}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"check-out",
+						"{814a5228-8e21-480e-b3e3-9470d2017e47}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view current occupancy",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "view all vehicles currently parked in a lot",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
