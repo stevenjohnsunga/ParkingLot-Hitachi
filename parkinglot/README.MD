@@ -1,3 +1,4 @@
+This is a simple java app I made for my technical exam for Hitachi.
 Parking Lot by Steven John Sunga
 
 1. Download the project (zipfile)
